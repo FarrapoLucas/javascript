@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+        body{
+            background-color: pink;
+            font: 15pt black Rock Stal;
+            display: block;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            font: normal 10pt Rock Salt;
+            background-color: white;
+            border: 2px solid;
+            border-radius: 5px;
+            width: 250px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .resultado {
+            font-family: Rock Salt;
+            color: black;
+        }
+        .title{
+            font-family: Rock Salt;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Calculadora</h1>
+    <h2 class="title">n1</h2>
+    <input type="number" name="n1" id="n1"><br>
+    <input type="button" value="calcular quadrado" onclick="calcularquadrado()"><br>
+    <input type="button" value="calcular cubo" onclick="calcularcubo()"><br>
+    <input type="button" value="calcular raiz quadrada" onclick="calcularraizquadrada()"><br>
+    
+    <h2 class="title">n2</h2>
+    <input type="number" name="n2" id="n2"><br>
+    <input type="button" value="somar" onclick="somar()">   
+    <input type="button" value="substrair" onclick="subtrair()"><br>
+    <input type="button" value="multiplicar" onclick="multiplicar()">
+    <input type="button" value="dividir" onclick="dividir()"><br>
+
+    <div id="resultado" class="resultado">Resultado</div>
+
+    <script>
+        var num1
+        var num2
+        
+        function somar() {
+            num1 = Number (document.getElementById('n1').value)
+            num2 = Number (document.getElementById('n2').value)
+            var somar = num1 + num2
+            var resultado = document.getElementById('resultado')
+            resultado.innerHTML = `A soma ${num1} + ${num2} será igual: ${somar}`
+        }
+        function subtrair() {
+            num1 = Number (document.getElementById('n1').value)
+            num2= Number (document.getElementById('n2').value)
+            var subtrair = num1 - num2
+            var resultado = document.getElementById('resultado')
+            resultado.innerHTML = `A subtração ${num1} - ${num2} será igual: ${subtrair}`
+        }
+        function multiplicar() {
+            num1 = Number (document.getElementById('n1').value)
+            num2= Number (document.getElementById('n2').value)
+            var multiplicar = num1 * num2
+            var resultado = document.getElementById('resultado')
+            resultado.innerHTML = `A multiplicação ${num1} x ${num2} será igual: ${multiplicar}`
+        }
+        function dividir () {
+            num1 = Number (document.getElementById('n1').value)
+            num2= Number (document.getElementById('n2').value)
+            var dividir = num1 / num2
+            var resultado = document.getElementById('resultado')
+            resultado.innerHTML = `A divisão ${num1} / ${num2} será igual: ${dividir}`
+        }
+        function calcularquadrado () {
+            num1 = Number (document.getElementById('n1').value)
+            var calcularquadrado = num1 ** 2
+            var resultado = window.document.getElementById('resultado')
+            resultado.innerHTML = `O quadrado de ${num1} será igual: ${calcularquadrado}`
+        }
+        function calcularcubo () {
+            num1 = Number (document.getElementById('n1').value)
+            var calcularcubo = num1 ** 3
+            var resultado = window.document.getElementById('resultado')
+            resultado.innerHTML = `O cubo de ${num1} será igual: ${calcularcubo}`
+        }
+        function calcularraizquadrada() {
+            num1 = Number (document.getElementById('n1').value)
+            var calcularraizquadrada = num1 ** (1/2)
+            var resultado = window.document.getElementById('resultado')
+            resultado.innerHTML = `A raiz de ${num1} será igual: ${calcularraizquadrada}`
+        }       
+    </script>
+</body>
+</html>
