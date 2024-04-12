@@ -18,7 +18,7 @@
 </head>
 <body>
     <h1>Verificação de nacionalidade</h1>
-    <input type = "text" id="país">
+    <input type = "text" id="pais">
     <input type = "button" value="verificar" onclick="verificarNacionalidade()">
     <div id="res" class="resultado">Resultado</div>
 
@@ -26,7 +26,7 @@
         function verificarNacionalidade(){
             var pais = document.querySelector('input#pais').value
             var mensagem;
-            if(pais.toLowCase() === 'brasil') {
+            if (pais.toLowerCase() === 'brasil') {
                 mensagem = 'Você é brasileiro';
             }
             else {
